@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    
+    <title> Author Page </title>
+   
+</head>
+<body>
+
+ <h3>Author Entry Akhila Mylavarapu</h3>   
+
+<form>
+    <label for="hidden_author">Hidden author name: </label>
+    <input type="password" id="hidden_author" value="Dickens"><br><br>
+
+    <label for="author_name">Guess the author: </label>
+    <input type="text" id="author_name"><br><br>
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess"><br><br>
+</form>
+
+<p id="result"></p>
+
+<script> 
+
+var good = 0, oops = 0;
+
+function checkAuthor(){
+
+    var hiddenAuthor = document.getElementById("hidden_author").value;
+    var authorname = document.getElementById("author_name").value;
+
+    if(hiddenAuthor === authorname){
+        good++;
+        alert("You got it right");
+    }
+    else{
+        oops++;
+        alert("Sorry");
+    }
+
+    document.getElementById("result").innerHTML = "good count = " + good + "<br> oops count = " + oops; 
+
+}
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+
+
+</script>
+
+</body>
+</html> 
