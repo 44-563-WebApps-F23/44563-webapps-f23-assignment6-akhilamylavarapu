@@ -5,7 +5,9 @@
     </head>
     <body>
         <h2>Akhila Mylavarapu goes on a cruise</h2>
+
         <form>
+
             <label for="cabin">Shares Cabin</label>
             <input type="checkbox" id="cabin" name="SharesCabin_input" value="True"><br>
 
@@ -16,11 +18,26 @@
             <input type="checkbox" id="poolpass" name="poolpass_input" value="false"><br><br>
 
             <input type="button" name="cruise_button" id="cruisebutton" onclick="selectCruise()" value="Select a cruise">
+
+        </form><br>
+
+        <form>
+
+            <label for="day">Enter the number of days</label>
+            <input type="text" id="day" name="nOfDays" value="days"><br><br>
+
+            <label for="price">Enter price</label>
+            <input type="text" id="curise_price" name="curisePrice"><br> <br>         
+
+            <input type="button" name="price_button" id="pricebutton" onclick="updateCruise()" value="Update the cruise">
         </form>
 
         <p id="curise_result"></p>
 
+        <p id="update_curise"></p>
+
         <script>
+
             let my_cruise = {};
 
             function selectCruise(){
@@ -32,6 +49,17 @@
 
                 document.getElementById('curise_result').innerHTML = JSON.stringify(my_cruise);
             }
+
+            function updateCruise(){
+                var days = document.getElementById("day").value;
+                var price = document.getElementById("curise_price").value;
+
+                my_cruise.days = days;
+                my_cruise.price = price;
+
+                document.getElementById("update_curise").innerHTML = JSON.stringify(my_cruise);
+            }
+
         </script>
     </body>
 </html>
