@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tips Page</title>
+    </head>
+ 
+<body>
+
+<h2>Akhila Mylavarapu shows tip amounts</h2>
+
+<form>
+    <label for="base_amount">Enter base amount</label>
+    <input type ="number" id="base_amount" name="amount" value = 50 > <br>
+
+    <label for="tip_percent">Enter the tip percent</label>
+    <input type ="number" id="tip_percent" name="percent" value="15"> <br>
+
+    <input type="button" onclick="tips()" value="Show tip">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+
+function tips(){
+    var baseAmount = +document.getElementById("base_amount").value;
+    var tip = +document.getElementById("tip_percent").value;
+    
+    var myOutput = "";
+    for(var i = 1; i <= 5; i++){
+        console.log(baseAmount)
+        var calculatedTip = ((baseAmount/100) * tip).toFixed(2);
+        myOutput = myOutput + tip + "% is " + calculatedTip + "; ";
+        tip += 4;
+        if(i==5){
+            document.getElementById("result").innerHTML = "Tips are:" + myOutput;
+        }
+    }
+}
+
+</script>
+
+</body>
+</html> 
