@@ -18,8 +18,21 @@
     <input type="button" onclick="tips()" value="Show tip">
 </form>
 
+<form>
+    <label for="form_sum">Sum</label>
+    <input type="radio" id="form_sum" name="sum_input" onclick="chooseOp()" value="sum">
 
-<p id="result"></p>
+    <label for="form_diff">Difference</label>
+    <input type="radio" id="form_diff" name="diff_input" onclick="chooseOp()" value="diff">
+
+    <label for="form_mult">Mult</label>
+    <input type="radio" id="form_mult" name="mult_input" onclick="chooseOp()" value="product">
+</form>
+
+
+<p id="tips_result"></p>
+
+<p id="choose_result"></p>
 
 <script> 
 
@@ -29,13 +42,27 @@ function tips(){
     
     var myOutput = "";
     for(var i = 1; i <= 5; i++){
-        console.log(baseAmount)
         var calculatedTip = ((baseAmount/100) * tip).toFixed(2);
         myOutput = myOutput + tip + "% is " + calculatedTip + "; ";
         tip += 4;
         if(i==5){
-            document.getElementById("result").innerHTML = "Tips are:" + myOutput;
+            document.getElementById("tips_result").innerHTML = "Tips are:" + myOutput;
         }
+    }
+}
+
+function chooseOp(){
+    var baseAmount = +document.getElementById("base_amount").value;
+    var tip = +document.getElementById("tip_percent").value;
+
+    if(document.getElementById("form_sum").checked){
+        document.getElementById("choose_result").innerHTML = "Sum of " + baseAmount + "  and " + tip + " is " + (baseAmount + tip);
+    }
+    else if(document.getElementById("form_diff").checked){
+        document.getElementById("choose_result").innerHTML = "Diff of " + baseAmount + "  and " + tip + " is " + (baseAmount - tip);
+    }
+    else{
+        document.getElementById("choose_result").innerHTML = "Multiple of " + baseAmount + "  and " + tip + " is " + (baseAmount * tip);
     }
 }
 
