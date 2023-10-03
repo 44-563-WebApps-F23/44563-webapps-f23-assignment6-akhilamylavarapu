@@ -21,9 +21,14 @@
 
 <p id="result"></p>
 
+<div id="image-container">
+    <img id="image" src="mysore.jpg" alt="Mysore" width="100" height="100" onclick = selectImage()>
+</div>
+
 <script> 
 
 var good = 0, oops = 0;
+var userImage = 1;
 
 function checkAuthor(){
 
@@ -56,6 +61,25 @@ function resolveForm (){
         out.innerHTML = "Values were not confirmed"
     }
 }
+
+function selectImage() {
+    switch (userImage) {
+      case 1:
+        document.getElementById("image").src = 'verona.jpg';
+        userImage ++;
+        break;
+      case 2:
+        document.getElementById("image").src = 'mysore.jpg';
+        userImage ++;
+        break;
+      case 3:
+        document.getElementById("image").src = 'london.jpg';    
+        userImage = 1;
+        break;
+      default:
+        userImage = 1;
+    }
+  }
 
 
 </script>
