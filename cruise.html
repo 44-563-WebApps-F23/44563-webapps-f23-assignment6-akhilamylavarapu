@@ -2,19 +2,20 @@
 <html>
     <head>
         <title>Cruise Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
-    <body>
-        <h2>Akhila Mylavarapu goes on a cruise</h2>
+    <body class="bg-info bg-gradient">
+        <h2 class="text-center">Akhila Mylavarapu goes on a cruise</h2>
 
         <form>
 
-            <label for="cabin">Shares Cabin</label>
+            <label for="cabin" class="form-label">Shares Cabin</label>
             <input type="checkbox" id="cabin" name="SharesCabin_input" value="True"><br>
 
-            <label for="breakfast">Breakfast</label>
+            <label for="breakfast" class="form-label">Breakfast</label>
             <input type="checkbox" id="breakfast" name="breakfast_input" value="True"><br>
 
-            <label for="poolpass">Pool Pass</label>
+            <label for="poolpass" class="form-label">Pool Pass</label>
             <input type="checkbox" id="poolpass" name="poolpass_input" value="false"><br><br>
 
             <input type="button" name="cruise_button" id="cruisebutton" onclick="selectCruise()" value="Select a cruise">
@@ -23,13 +24,13 @@
 
         <form>
 
-            <label for="day">Enter the number of days</label>
-            <input type="text" id="day" name="nOfDays" value="days"><br><br>
+            <label for="day" class="form-label">Enter the number of days</label>
+            <input type="text" id="day" class="form-control" name="nOfDays" value="days"><br><br>
 
-            <label for="price">Enter price</label>
-            <input type="text" id="curise_price" name="curisePrice"><br> <br>         
+            <label for="price" class="form-label">Enter price</label>
+            <input type="text" id="curise_price" class="form-control" name="curisePrice"><br> <br>         
 
-            <input type="button" name="price_button" id="pricebutton" onclick="updateCruise()" value="Update the cruise">
+            <input type="button" name="price_button" id="pricebutton" class="form-control" onclick="updateCruise()" value="Update the cruise">
         </form>
 
         <p id="curise_result"></p>

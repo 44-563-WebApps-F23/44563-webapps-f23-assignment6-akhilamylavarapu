@@ -3,26 +3,31 @@
  <head>
     
     <title> Author Page </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
    
 </head>
-<body>
+<body class="bg-info bg-gradient">
 
- <h3>Author Entry Akhila Mylavarapu</h3>   
+ <h3 class="text-center">Author Entry Akhila Mylavarapu</h3>   
 
-<form>
-    <label for="hidden_author">Hidden author name: </label>
-    <input type="password" id="hidden_author" value="Dickens"><br><br>
+ <div class="w-25 mx-auto border p-3">
+   <form>
+       <label for="hidden_author" class="form-label">Hidden author name: </label>
+       <input type="password" id="hidden_author" class="form-control" value="Dickens"><br><br>
+   
+       <label for="author_name" class="form-label">Guess the author: </label>
+       <input type="text" id="author_name" class="form-control"><br><br>
+   
+       <input id="button_check" type="button" class="btn btn-primary" onclick="checkAuthor()" value="Check the guess"><br><br>
+   </form>
+ </div>
 
-    <label for="author_name">Guess the author: </label>
-    <input type="text" id="author_name"><br><br>
+<p class="text-center" id="result"></p>
 
-    <input type="button" onclick="checkAuthor()" value="Check the guess"><br><br>
-</form>
-
-<p id="result"></p>
-
-<div id="image-container">
-    <img id="image" src="mysore.jpg" alt="Mysore" width="100" height="100" onclick = selectImage()>
+<div class="d-flex justify-content-center">
+  <div id="image-container">
+      <img id="image" src="mysore.jpg" alt="Mysore" width="100" height="100" onclick = selectImage()>
+  </div>
 </div>
 
 <script> 
@@ -34,6 +39,10 @@ function checkAuthor(){
 
     var hiddenAuthor = document.getElementById("hidden_author").value;
     var authorname = document.getElementById("author_name").value;
+
+    if(oops >= 7){
+      document.getElementById("button_check").onclick = ranOutOfGuess();
+    }
 
     if(hiddenAuthor === authorname){
         good++;
@@ -47,6 +56,11 @@ function checkAuthor(){
     document.getElementById("result").innerHTML = "good count = " + good + "<br> oops count = " + oops; 
 
 }
+
+function ranOutOfGuess(){
+  alert("Sorry, ran out of guesses.");
+}
+
 
 function selectImage() {
     switch (userImage) {
@@ -68,7 +82,7 @@ function selectImage() {
   }
 
 </script>
-<br><br>
+<br><br><br><br>
 Link to Tips Page: <a href="tips.html">Tips</a>
 
 </body>
