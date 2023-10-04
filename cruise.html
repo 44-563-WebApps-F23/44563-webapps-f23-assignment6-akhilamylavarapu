@@ -4,38 +4,43 @@
         <title>Cruise Page</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
-    <body class="bg-info bg-gradient">
+    <body class="bg-light bg-gradient">
         <h2 class="text-center">Akhila Mylavarapu goes on a cruise</h2>
 
+        <div class="w-25 mx-auto border p-4 input-group-text">
+                <form>
+                    <label for="cabin" class="form-check-label">Shares Cabin</label>
+                    <input type="checkbox" id="cabin" class="form-check-input mt-0 form-check-input" value="True">
+            
+                    <label for="breakfast" class="form-check-label">Breakfast</label>
+                    <input type="checkbox" id="breakfast" class="form-check-input mt-0 form-check-input" value="True">
+            
+                    <label for="poolpass" class="form-check-label">Pool Pass</label>
+                    <input type="checkbox" id="poolpass" class="form-check-input mt-0 form-check-input" value="false"><br><br>
+            
+                    <input type="button" id="button_check" type="button" class="btn btn-primary" onclick="selectCruise()" value="Select a cruise">
+            
+                </form><br>
+            </div>
+<br><br><br>
         <form>
 
-            <label for="cabin" class="form-label">Shares Cabin</label>
-            <input type="checkbox" id="cabin" name="SharesCabin_input" value="True"><br>
+            <div class="w-25 mx-auto border p-3">
+                <form>
+        
+                    <label for="day" class="form-label">Enter the number of days</label>
+                    <input type="text" id="day" class="form-control" name="nOfDays" value="days"><br><br>
+        
+                    <label for="price" class="form-label">Enter price</label>
+                    <input type="text" id="curise_price" class="form-control" name="curisePrice"><br> <br>         
+        
+                    <input type="button" id="button_check" type="button" class="btn btn-primary" onclick="updateCruise()" value="Update the cruise">
+                </form>
+            </div>
 
-            <label for="breakfast" class="form-label">Breakfast</label>
-            <input type="checkbox" id="breakfast" name="breakfast_input" value="True"><br>
+        <p  class="text-center" id="curise_result"></p>
 
-            <label for="poolpass" class="form-label">Pool Pass</label>
-            <input type="checkbox" id="poolpass" name="poolpass_input" value="false"><br><br>
-
-            <input type="button" name="cruise_button" id="cruisebutton" onclick="selectCruise()" value="Select a cruise">
-
-        </form><br>
-
-        <form>
-
-            <label for="day" class="form-label">Enter the number of days</label>
-            <input type="text" id="day" class="form-control" name="nOfDays" value="days"><br><br>
-
-            <label for="price" class="form-label">Enter price</label>
-            <input type="text" id="curise_price" class="form-control" name="curisePrice"><br> <br>         
-
-            <input type="button" name="price_button" id="pricebutton" class="form-control" onclick="updateCruise()" value="Update the cruise">
-        </form>
-
-        <p id="curise_result"></p>
-
-        <p id="update_curise"></p>
+        <p class="text-center" id="update_curise"></p>
 
         <script>
 
@@ -63,6 +68,8 @@
 
         </script>
         <br><br>
-        Link to Author Page: <a href="author.html">Author</a>
+        <h4>
+            Link to Author Page: <a href="author.html">Author</a>
+        </h4>
     </body>
 </html>
